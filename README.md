@@ -1,5 +1,5 @@
 # Project Proposal: NutriTrack Recipe Optimizer
-**Student:** Lucas Lutes  
+**Student:** Lucas Lutes
 **Major:** Computer Engineering
 
 ## Project Summary
@@ -32,17 +32,42 @@ The **NutriTrack Recipe Optimizer** is a console-based application designed to h
 ---
 
 ## Weekly Progress Report
-### Week 1 (Current)
+
+### Week 1
 * **Status:** Project Proposal and README drafted.
 * **Task:** Designed the initial JSON schema for recipe storage.
 * **Hours Logged:** 2 hours.
 
+### Week 2
+* **Status:** Successfully transitioned the project into a mostly functional prototype.
+* **Tasks:**
+    * Built the core Python application with a 3-level nested menu for cookbook management.
+    * Integrated JSON file processing to save and load recipes.
+    * Developed the math engine to calculate nutritional totals for meals.
+* **Challenges:** Progress was slightly impacted by a heavy workload involving tests, exams, and other homework.
+* **Hours Logged:** 7 hours.
+
+### Week 3 (Current)
+* **Status:** Expanded the prototype with file export capabilities and refined logic.
+* **Tasks:**
+    * **CSV Export:** Implemented the `export_shopping_list` function to generate CSV files, satisfying the first rubric objective.
+    * **UI/UX Enhancement:** Refined the "Analysis" output to display formatted macro data rather than raw dictionaries.
+    * **Unit Testing:** Finalized the initial `test_nutri.py` file to verify the accuracy of macro calculations.
+    * **Data Integrity:** Updated ingredient lookups to be case-insensitive to prevent user errors.
+* **Hours Logged:** 2 hours.
+
+**Total Project Hours Logged:** 11 hours.
+
+---
+
+### Sample Code
 ```python
 def calculate_recipe_totals(recipe_ingredients, nutrition_db):
     totals = {"calories": 0, "protein": 0, "fat": 0, "carbs": 0}
     for item, grams in recipe_ingredients.items():
-        if item in nutrition_db:
+        item_lookup = item.lower()
+        if item_lookup in nutrition_db:
             factor = grams / 100
             for macro in totals:
-                totals[macro] += nutrition_db[item][macro] * factor
+                totals[macro] += nutrition_db[item_lookup][macro] * factor
     return totals
