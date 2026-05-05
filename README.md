@@ -25,9 +25,6 @@ The **NutriTrack Recipe Optimizer** is a console-based application designed to h
 4. **Unittest Framework:** A dedicated `test_nutri.py` file will be used to run unit tests on all math-heavy calculation functions.
 5. **Nested Menutree:** The "Manage Cookbook" option will lead to submenus for viewing or editing, reaching a depth of 3 levels.
 
-## Innovative Component
-**Smart Substitution Engine:** This component will analyze the "pain points" of a recipe (such as high saturated fat or high calories). It will scan the broader nutrition database to suggest replacement ingredients with a similar profile but better health metrics. It then automatically updates a temporary "optimized" version of the recipe for the user to review.
-
 ---
 
 ## Weekly Progress Report
