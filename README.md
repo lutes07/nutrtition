@@ -43,7 +43,7 @@ The **NutriTrack Recipe Optimizer** is a console-based application designed to h
 * **Challenges:** Progress was slightly impacted by a heavy workload involving tests, exams, and other homework.
 * **Hours Logged:** 7 hours.
 
-### Week 3 (Current)
+### Week 3
 * **Status:** Expanded the prototype with file export capabilities and refined logic.
 * **Tasks:**
     * **CSV Export:** Implemented the `export_shopping_list` function to generate CSV files, satisfying the first rubric objective.
