@@ -10,8 +10,7 @@ The **NutriTrack Recipe Optimizer** is a console-based application designed to h
 * **[2] Nutritional Analysis:** Select a recipe to calculate total Calories, Protein, Carbs, and Fats based on ingredient quantities.
 * **[3] Visualize Macros:** Generate a Matplotlib Radar Chart (Spider Plot) comparing a recipe's profile to daily Recommended Daily Intake (RDI).
 * **[4] Smart Substitution:** A feature that suggests lower-calorie or healthier alternatives for specific ingredients within a selected recipe.
-* **[5] Export Shopping List:** Generate a summarized CSV file of all ingredients needed for a selected list of recipes.
-* **[0] Exit:** Save all changes to the JSON database and terminate the program.
+* **[5] Exit:** Save all changes to the JSON database and terminate the program.
 
 ## Anticipated Helper Functions
 * `load_data(filepath)`: Handles reading the nested JSON structures into Python dictionaries at startup.
@@ -56,18 +55,14 @@ The **NutriTrack Recipe Optimizer** is a console-based application designed to h
     * **Data Integrity:** Updated ingredient lookups to be case-insensitive to prevent user errors.
 * **Hours Logged:** 2 hours.
 
-**Total Project Hours Logged:** 11 hours.
+### Week 4 (Current)
+* **Status:** Project completion and final presentation preparation.
+* **Tasks:**
+    * **Architecture Split:** Separated the project into a standard `main.py` execution file and a `nutri_track.py` helper module.
+    * **Data Visualization:** Built and integrated the Matplotlib Spider Plot to visualize recipe macros against standard daily targets.
+    * **Testing Additions:** Added additional unit tests to verify proper handling of missing database files.
+    * **Code Quality:** Formatted all inline comments into standard Python docstrings for professional documentation.
+* **Hours Logged:** 4 hours.
 
----
+**Total Project Hours Logged:** 15 hours.
 
-### Sample Code
-```python
-def calculate_recipe_totals(recipe_ingredients, nutrition_db):
-    totals = {"calories": 0, "protein": 0, "fat": 0, "carbs": 0}
-    for item, grams in recipe_ingredients.items():
-        item_lookup = item.lower()
-        if item_lookup in nutrition_db:
-            factor = grams / 100
-            for macro in totals:
-                totals[macro] += nutrition_db[item_lookup][macro] * factor
-    return totals
